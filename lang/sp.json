@@ -10,13 +10,11 @@
     "cvTitle": "Curriculum Vitae",
     "contactTitle": "Contact",
     "contactText": "Feel free to reach out to me via email or connect with me on GitHub and LinkedIn.",
-    "about": "About",
-    "research":"Research",
-    "publications":"Publications",
-    "cv":"CV",
-    "contact":"Contact",
+    "about": "about",
+    "research":"research",
+    "publications":"publications",
+    "cv":"cv",
+    "contact":"contact",
     "viewResearch":"View My Research",
-    "downloadCV":"Download CV",
-    "researchProjects":"Research Projects",
-    "publicationsPart":"Publications"
+    "downloadCV":"Download CV"
   }

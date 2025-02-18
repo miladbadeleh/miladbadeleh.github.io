@@ -2,9 +2,9 @@
     "homeTitle": "Wissen verfolgen, Zukunft gestalten",
     "homeSubtitle": "Masterstudent in Baumanagement | Angehender Doktorand",
     "aboutTitle": "Über mich",
-    "aboutText1": "I am a dedicated student pursuing my studies in Construction Management at the University of Azad Islamic of Science and Research of Tehran. My academic journey is deeply rooted in the intersection of construction engineering and cutting-edge technologies, with a particular focus on artificial intelligence (AI) and its applications in the built environment. My current research revolves around leveraging Convolutional Neural Networks (CNNs) and deep learning techniques for concrete crack detection, aiming to enhance structural health monitoring and improve the safety and longevity of infrastructure.",
-    "aboutText2": "Driven by a passion for innovation, I am committed to exploring how AI can revolutionize traditional construction practices, from predictive maintenance to automated quality control. My work not only reflects my technical expertise but also my desire to contribute to sustainable and resilient infrastructure development.",
-    "aboutText3": "Beyond my academic pursuits, I am an avid learner and enthusiast of AI, constantly seeking to expand my knowledge and skills in machine learning, computer vision, and data-driven decision-making. I aspire to bridge the gap between construction management and advanced technologies, fostering a future where intelligent systems play a pivotal role in shaping the built environment.",
+    "aboutText1": "Ich bin ein engagierter Student, der mein Studium im Baumanagement an der Universität Azad Islamic of Science and Research in Teheran fortsetzt. Meine akademische Laufbahn ist tief in der Schnittstelle zwischen Bauingenieurwesen und Spitzentechnologien verwurzelt, mit besonderem Schwerpunkt auf künstlicher Intelligenz (KI) und ihren Anwendungen in der gebauten Umwelt. Meine aktuelle Forschung konzentriert sich auf die Nutzung von Convolutional Neural Networks (CNNs) und Deep-Learning-Techniken zur Betonrisserkennung mit dem Ziel, die Überwachung des strukturellen Zustands zu verbessern und die Sicherheit und Langlebigkeit der Infrastruktur zu verbessern.",
+    "aboutText2": "Angetrieben von einer Leidenschaft für Innovation, setze ich mich dafür ein, zu erforschen, wie KI traditionelle Baupraktiken revolutionieren kann, von der vorausschauenden Wartung bis zur automatisierten Qualitätskontrolle. Meine Arbeit spiegelt nicht nur mein technisches Fachwissen wider, sondern auch meinen Wunsch, zu einer nachhaltigen und belastbaren Infrastrukturentwicklung beizutragen.",
+    "aboutText3": "Über meine akademischen Aktivitäten hinaus bin ich ein begeisterter Lernender und Enthusiast von KI und versuche ständig, mein Wissen und meine Fähigkeiten in den Bereichen maschinelles Lernen, Computer Vision und datengesteuerte Entscheidungsfindung zu erweitern. Mein Ziel ist es, die Lücke zwischen Baumanagement und fortschrittlichen Technologien zu schließen und eine Zukunft zu fördern, in der intelligente Systeme eine entscheidende Rolle bei der Gestaltung der gebauten Umwelt spielen.",
     "researchTitle": "Forschungsprojekte",
     "publicationsTitle": "Veröffentlichungen",
     "cvTitle": "Curriculum Vitae",
@@ -14,5 +14,9 @@
     "research":"Forschung",
     "publications":"Veröffentlichungen",
     "cv":"Lebenslauf",
-    "contact":"Kontakt"
+    "contact":"Kontakt",
+    "viewResearch":"Sehen Sie sich meine Forschung an",
+    "downloadCV":"Lebenslauf herunterladen",
+    "researchProjects":"Forschungsprojekte",
+    "publicationsPart":"Veröffentlichungen"
   }

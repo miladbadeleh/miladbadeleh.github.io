@@ -14,5 +14,7 @@
   "research":"research",
   "publications":"publications",
   "cv":"cv",
-  "contact":"contact"
+  "contact":"contact",
+  "viewResearch":"View My Research",
+    "downloadCV":"Download CV"
 }
