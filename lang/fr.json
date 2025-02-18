@@ -1,11 +1,18 @@
 {
-    "homeTitle": "Стремление к знаниям, формирование будущего",
-    "homeSubtitle": "Студент магистратуры по управлению строительством | Кандидат на PhD",
-    "aboutTitle": "Обо мне",
-    "aboutText": "Я целеустремленный студент, изучающий управление строительством в Университете Азад Ислам науки и исследований Тегерана...",
-    "researchTitle": "Исследовательские проекты",
-    "publicationsTitle": "Публикации",
-    "cvTitle": "Резюме",
-    "contactTitle": "Контакт",
-    "contactText": "Свяжитесь со мной по электронной почте или через GitHub и LinkedIn."
+    "homeTitle": "Poursuivre la connaissance, façonner l’avenir",
+    "homeSubtitle": "Étudiant à la maîtrise en gestion de la construction | Aspirant doctorant",
+    "aboutTitle": "Sur moi",
+    "aboutText1": "I am a dedicated student pursuing my studies in Construction Management at the University of Azad Islamic of Science and Research of Tehran. My academic journey is deeply rooted in the intersection of construction engineering and cutting-edge technologies, with a particular focus on artificial intelligence (AI) and its applications in the built environment. My current research revolves around leveraging Convolutional Neural Networks (CNNs) and deep learning techniques for concrete crack detection, aiming to enhance structural health monitoring and improve the safety and longevity of infrastructure.",
+    "aboutText2": "Driven by a passion for innovation, I am committed to exploring how AI can revolutionize traditional construction practices, from predictive maintenance to automated quality control. My work not only reflects my technical expertise but also my desire to contribute to sustainable and resilient infrastructure development.",
+    "aboutText3": "Beyond my academic pursuits, I am an avid learner and enthusiast of AI, constantly seeking to expand my knowledge and skills in machine learning, computer vision, and data-driven decision-making. I aspire to bridge the gap between construction management and advanced technologies, fostering a future where intelligent systems play a pivotal role in shaping the built environment.",
+    "researchTitle": "Projets de recherche",
+    "publicationsTitle": "Publications",
+    "cvTitle": "Curriculum vitae",
+    "contactTitle": "Contact",
+    "contactText": "N'hésitez pas à me contacter par e-mail ou à me contacter sur GitHub et LinkedIn.",
+    "about": "about",
+    "research":"research",
+    "publications":"publications",
+    "cv":"cv",
+    "contact":"contact"
   }
