@@ -306,6 +306,29 @@ footer {
   margin: 0 0.5rem;
   font-size: 1.2rem;
 }
+
+/* Research Detail Page */
+.research-detail {
+  padding: 4rem 0;
+}
+
+.research-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.research-detail h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.research-detail p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .hero h1 {
