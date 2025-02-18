@@ -15,5 +15,10 @@
     "research":"recherche",
     "publications":"publications",
     "cv":"cv",
-    "contact":"contact"
+    "contact":"contact",
+    "viewResearch":"View My Research",
+    "downloadCV":"Download CV",
+    "researchProjects":"Research Projects",
+    "publicationsPart":"Publications",
+    "curriculumVitae":"Curriculum Vitae"
   }

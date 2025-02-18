@@ -3,8 +3,8 @@
   "homeSubtitle": "Studente del Master in Gestione delle Costruzioni | Aspirante dottorando",
   "aboutTitle": "Su di me",
   "aboutText1": "Sono uno studente impegnato che prosegue i miei studi in Gestione delle costruzioni presso l'Università di Azad Islamica di Scienza e Ricerca di Teheran. Il mio percorso accademico è profondamente radicato nell'intersezione tra ingegneria edile e tecnologie all'avanguardia, con un focus particolare sull'intelligenza artificiale (AI) e sulle sue applicazioni nell'ambiente costruito. La mia ricerca attuale ruota attorno allo sfruttamento delle reti neurali convoluzionali (CNN) e delle tecniche di deep learning per il rilevamento di crepe nel calcestruzzo, con l'obiettivo di migliorare il monitoraggio della salute strutturale e migliorare la sicurezza e la longevità delle infrastrutture.",
-    "aboutText2": "Spinto dalla passione per l'innovazione, mi impegno a esplorare come l'intelligenza artificiale possa rivoluzionare le pratiche di costruzione tradizionali, dalla manutenzione predittiva al controllo di qualità automatizzato. Il mio lavoro non riflette solo la mia competenza tecnica, ma anche il mio desiderio di contribuire allo sviluppo di infrastrutture sostenibili e resilienti.",
-    "aboutText3": "Al di là delle mie attività accademiche, sono uno studente avido e un appassionato di intelligenza artificiale, cerco costantemente di espandere le mie conoscenze e competenze nell'apprendimento automatico, nella visione artificiale e nel processo decisionale basato sui dati. Aspiro a colmare il divario tra la gestione della costruzione e le tecnologie avanzate, promuovendo un futuro in cui i sistemi intelligenti svolgano un ruolo fondamentale nel modellare l’ambiente costruito.",
+  "aboutText2": "Spinto dalla passione per l'innovazione, mi impegno a esplorare come l'intelligenza artificiale possa rivoluzionare le pratiche di costruzione tradizionali, dalla manutenzione predittiva al controllo di qualità automatizzato. Il mio lavoro non riflette solo la mia competenza tecnica, ma anche il mio desiderio di contribuire allo sviluppo di infrastrutture sostenibili e resilienti.",
+  "aboutText3": "Al di là delle mie attività accademiche, sono uno studente avido e un appassionato di intelligenza artificiale, cerco costantemente di espandere le mie conoscenze e competenze nell'apprendimento automatico, nella visione artificiale e nel processo decisionale basato sui dati. Aspiro a colmare il divario tra la gestione della costruzione e le tecnologie avanzate, promuovendo un futuro in cui i sistemi intelligenti svolgano un ruolo fondamentale nel modellare l’ambiente costruito.",
   "researchTitle": "Progetti di ricerca",
   "publicationsTitle": "Pubblicazioni",
   "cvTitle": "Curriculum Vitae",
@@ -17,5 +17,8 @@
   "cv":"cv",
   "contact":"contatto",
   "viewResearch":"View My Research",
-    "downloadCV":"Download CV"
+  "downloadCV":"Download CV",
+  "researchProjects":"Research Projects",
+  "publicationsPart":"Publications",
+  "curriculumVitae":"Curriculum vitae"
 }
