@@ -23,47 +23,46 @@
         <li><a href="#publications" data-translate="publications">Publications</a></li>
         <li><a href="#cv" data-translate="cv">CV</a></li>
         <li><a href="#contact" data-translate="contact">Contact</a></li>
-        <li>
-          <div class="language-selector-wrapper">
-            <select id="language-selector">
-              <option value="en">English</option>
-              <option value="ru">Русский</option>
-              <option value="de">Deutsch</option>
-              <option value="ar">العربية</option>
-              <option value="zh">中文</option>
-              <option value="nl">Nederlands</option>
-              <option value="fr">Français</option>
-              <option value="it">Italiano</option>
-            </select>
-            <i class="fas fa-globe"></i> <!-- Globe icon for better UX -->
-          </div>
-        </li>
       </ul>
+      <!-- Language Selector -->
+      <div class="language-selector-wrapper">
+        <select id="language-selector">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="de">Deutsch</option>
+          <option value="zh">中文</option>
+          <option value="nl">ِDutch</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="sp">Spanish</option>
+        </select>
+        <i class="fas fa-globe"></i>
+      </div>
     </div>
   </nav>
 
-  <!-- Home Section -->
   <section id="home" class="hero">
     <div class="container">
-      <h1>Pursuing Knowledge, Shaping the Future</h1>
-      <p>Master's Student in Construction Management | Aspiring PhD Candidate</p>
+      <h1 data-translate="homeTitle">Pursuing Knowledge, Shaping the Future</h1>
+      <p data-translate="homeSubtitle">Master's Student in Construction Management | Aspiring PhD Candidate</p>
       <div class="cta-buttons">
-        <a href="#research" class="btn btn-primary">View My Research</a>
-        <a href="#cv" class="btn btn-secondary">Download CV</a>
+        <a href="#research" class="btn btn-primary" data-translate="viewResearch">View My Research</a>
+        <a href="#cv" class="btn btn-secondary" data-translate="downloadCV">Download CV</a>
       </div>
     </div>
   </section>
+  
+  
 
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <h2>About Me</h2>
+      <h2 data-translate="aboutTitle">About Me</h2>
       <div class="about-content">
-        
         <div class="bio">
-          <p>I am a dedicated student pursuing my studies in Construction Management at the University of Azad Islamic of Science and Research of Tehran. My academic journey is deeply rooted in the intersection of construction engineering and cutting-edge technologies, with a particular focus on artificial intelligence (AI) and its applications in the built environment. My current research revolves around leveraging Convolutional Neural Networks (CNNs) and deep learning techniques for concrete crack detection, aiming to enhance structural health monitoring and improve the safety and longevity of infrastructure.</p>
-          <p>Driven by a passion for innovation, I am committed to exploring how AI can revolutionize traditional construction practices, from predictive maintenance to automated quality control. My work not only reflects my technical expertise but also my desire to contribute to sustainable and resilient infrastructure development.</p>
-          <p>Beyond my academic pursuits, I am an avid learner and enthusiast of AI, constantly seeking to expand my knowledge and skills in machine learning, computer vision, and data-driven decision-making. I aspire to bridge the gap between construction management and advanced technologies, fostering a future where intelligent systems play a pivotal role in shaping the built environment.</p>
+          <p data-translate="aboutText1">I am a dedicated student pursuing my studies in Construction Management at the University of Azad Islamic of Science and Research of Tehran. My academic journey is deeply rooted in the intersection of construction engineering and cutting-edge technologies, with a particular focus on artificial intelligence (AI) and its applications in the built environment. My current research revolves around leveraging Convolutional Neural Networks (CNNs) and deep learning techniques for concrete crack detection, aiming to enhance structural health monitoring and improve the safety and longevity of infrastructure.</p>
+          <p data-translate="aboutText2">Driven by a passion for innovation, I am committed to exploring how AI can revolutionize traditional construction practices, from predictive maintenance to automated quality control. My work not only reflects my technical expertise but also my desire to contribute to sustainable and resilient infrastructure development.</p>
+          <p data-translate="aboutText3">Beyond my academic pursuits, I am an avid learner and enthusiast of AI, constantly seeking to expand my knowledge and skills in machine learning, computer vision, and data-driven decision-making. I aspire to bridge the gap between construction management and advanced technologies, fostering a future where intelligent systems play a pivotal role in shaping the built environment.</p>
           <h3>Skills</h3>
           <ul>
             <li>Python</li>
@@ -89,7 +88,7 @@
 <!-- Research Section -->
 <section id="research" class="research">
   <div class="container">
-    <h2>Research Projects</h2>
+    <h2 data-translate="researchProjects">Research Projects</h2>
     <div class="project-grid">
       <div class="project-card">
         <h3>Using ResNet101 for Concrete Crack Detection</h3>
@@ -107,7 +106,7 @@
   <!-- Publications Section -->
   <section id="publications" class="publications">
     <div class="container">
-      <h2>Publications</h2>
+      <h2 data-translate="publicationsPart">Publications</h2>
       <table>
         <thead>
           <tr>
@@ -140,7 +139,7 @@
     <div class="container">
       <h2>Curriculum Vitae</h2>
       <p>Download my CV to learn more about my academic and professional background.</p>
-      <a href="https://raw.githubusercontent.com/miladbadeleh/miladbadeleh.github.io/main/email.pdf" class="btn btn-gradient" download="email.pdf">Download CV</a>
+      <a href="https://raw.githubusercontent.com/miladbadeleh/miladbadeleh.github.io/main/email.pdf" class="btn btn-gradient" download="email.pdf" data-translate="downloadCV">Download CV</a>
     </div>
   </section>
 
