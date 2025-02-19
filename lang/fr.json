@@ -22,9 +22,9 @@
   "publicationTitle": "Title",
   "publicationYear": "Year",
   "publicationJournal": "Journal/Conference",
-  "publicationLink": "Link",
-  "curriculumVitae": "Curriculum Vitae",
-  "cvText": "Download my CV to learn more about my academic and professional background.",
-  "skills": "Skills",
-  "learnMore":"Learn More"
+  "publicationLink": "Lien",
+  "curriculumVitae": "Curriculum vitae",
+  "cvText": "Téléchargez mon CV pour en savoir plus sur mon parcours académique et professionnel.",
+  "skills": "Compétences",
+  "learnMore":"Apprendre encore plus"
 }
