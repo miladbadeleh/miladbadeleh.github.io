@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>concrete crack detection using resnet50</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="../MB.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#home" class="logo">Milad Badeleh</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about" data-translate="about">About</a></li>
+        <li><a href="#research" data-translate="research">Research</a></li>
+        <!-- <li><a href="#publications" data-translate="publications">Publications</a></li> -->
+        <li><a href="#cv" data-translate="cv">CV</a></li>
+        <li><a href="#contact" data-translate="contact">Contact</a></li>
+      </ul>
+      <!-- Language Selector -->
+      <div class="language-selector-wrapper">
+        <select id="language-selector">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="sp">español</option>
+          <option value="fr">Français</option>
+          <!-- <option value="ar">العربية</option> -->
+          <option value="po">Português</option>
+          <option value="it">Italiano</option>
+          <option value="nl">ِDutch</option>
+          <option value="hi">हिंदी</option>
+          <option value="ba">বাংলা</option>
+        </select>
+        <i class="fas fa-globe"></i>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Research Content -->
+  <section class="research-detail">
+    <div class="container">
+            <h1>Image Classification Using VGG11</h1>
+        
+            <div class="section">
+                <h2>Overview</h2>
+                <p>
+                    This project implements an image classification model using the <strong>VGG11</strong> architecture, a deep convolutional neural network (CNN) developed by the Visual Geometry Group (VGG) at Oxford. The model is pretrained on the ImageNet dataset and fine-tuned on a custom dataset to classify images into predefined categories. The implementation leverages PyTorch, a popular deep learning framework, and is designed to run efficiently on GPUs.
+                </p>
+            </div>
+        
+            <div class="section">
+                <h2>Architecture</h2>
+                <h3>VGG11</h3>
+                <p>
+                    VGG11 is a member of the VGG family of models, which are characterized by their simplicity and depth. The architecture consists of 11 weight layers, including 8 convolutional layers and 3 fully connected layers. Key features of VGG11 include:
+                </p>
+                <ul>
+                    <li><strong>Small Convolutional Filters</strong>: All convolutional layers use 3x3 filters, which help capture spatial features efficiently.</li>
+                    <li><strong>Max Pooling</strong>: Applied after certain convolutional layers to reduce spatial dimensions and control overfitting.</li>
+                    <li><strong>Fully Connected Layers</strong>: The final layers are fully connected, with the last layer outputting the number of classes for classification.</li>
+                </ul>
+                <p>
+                    The architecture is designed to learn hierarchical features, starting from low-level edges and textures to high-level object representations.
+                </p>
+            </div>
+        
+            <div class="section">
+                <h2>Implementation Details</h2>
+                <h3>Data Preprocessing</h3>
+                <p>
+                    The input images are preprocessed to match the requirements of the VGG11 model:
+                </p>
+                <ul>
+                    <li><strong>Resizing</strong>: Images are resized to 224x224 pixels.</li>
+                    <li><strong>Normalization</strong>: Pixel values are normalized using the mean and standard deviation of the ImageNet dataset (<code>mean=[0.485, 0.456, 0.406]</code>, <code>std=[0.229, 0.224, 0.225]</code>).</li>
+                    <li><strong>Data Augmentation</strong>: Optional transformations like random cropping, flipping, and rotation can be applied to improve generalization.</li>
+                </ul>
+        
+                <h3>Model Definition</h3>
+                <p>
+                    The VGG11 model is loaded with pretrained weights from ImageNet. The final fully connected layer is modified to match the number of classes in the custom dataset:
+                </p>
+                <pre><code>
+        model = models.vgg11(pretrained=True)
+        num_classes = len(train_dataset.classes)
+        model.classifier[6] = nn.Linear(model.classifier[6].in_features, num_classes)
+                </code></pre>
+        
+                <h3>Training</h3>
+                <p>
+                    The model is trained using the following steps:
+                </p>
+                <ul>
+                    <li><strong>Loss Function</strong>: Cross-entropy loss is used to measure the difference between predicted and actual labels.</li>
+                    <li><strong>Optimizer</strong>: The Adam optimizer is used to update model weights with a learning rate of 0.001.</li>
+                    <li><strong>Training Loop</strong>: The model is trained for a specified number of epochs, with progress tracked using a progress bar.</li>
+                </ul>
+        
+                <h3>Validation and Testing</h3>
+                <p>
+                    After each epoch, the model is evaluated on a validation set to monitor performance. Once training is complete, the model is tested on a separate test set to measure its generalization ability.
+                </p>
+            </div>
+        
+            <div class="section">
+                <h2>Results</h2>
+                <p>
+                    The performance of the model is evaluated using:
+                </p>
+                <ul>
+                    <li><strong>Training Accuracy</strong>: Accuracy on the training set.</li>
+                    <li><strong>Validation Accuracy</strong>: Accuracy on the validation set.</li>
+                    <li><strong>Test Accuracy</strong>: Accuracy on the test set.</li>
+                </ul>
+                <p>
+                    The model achieves high accuracy on the training and validation sets, demonstrating its ability to learn and generalize from the data.
+                </p>
+            </div>
+        
+            <div class="section">
+                <h2>Usage</h2>
+                <p>
+                    To use this model:
+                </p>
+                <ol>
+                    <li>Organize your dataset into <code>train</code>, <code>validation</code>, and <code>test</code> folders.</li>
+                    <li>Run the training script to fine-tune the model on your dataset.</li>
+                    <li>Evaluate the model on the test set to measure its performance.</li>
+                    <li>Save the trained model for future use.</li>
+                </ol>
+            </div>
+        
+            <div class="section">
+                <h2>Conclusion</h2>
+                <p>
+                    The VGG11 model provides a robust and efficient solution for image classification tasks. Its simple yet effective architecture makes it suitable for a wide range of applications, from medical imaging to object recognition. By fine-tuning the pretrained model on a custom dataset, we can achieve high accuracy with relatively small amounts of data.
+                </p>
+            </div>
+            <div class="section">
+                <h2>Code Repository</h2>
+                <p>
+                    The complete code for this project is available on <a href="https://github.com/miladbadeleh/Concrete-Crack-Detection-Using-VGG11" target="_blank">GitHub</a>. Feel free to explore, fork, and contribute!
+                </p>
+              </div>
+        
+        </body>
+        </html>
+      <a href="../index.html#research" class="btn btn-primary">Back to Research</a>
+    </div>
+  </section>
+
+ <!-- Footer -->
+ <footer>
+    <div class="container">
+      <p>&copy; 2025 Milad Badeleh. All rights reserved.</p>
+      <div class="social-links">
+        <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+        <!-- <a href="https://www.researchgate.net/profile/Milad-Badeleh"><i class="fab fa-researchgate"></i></a> -->
+        <a href="https://github.com/miladbadeleh"><i class="fab fa-github"></i></a>
+        <!-- <a href="https://orcid.org/your-orcid-id" target="_blank"><i class="fab fa-orcid"></i></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=YOUR_SCOPUS_ID" target="_blank"><i class="fas fa-book"></i></a>
+      <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank"><i class="fas fa-graduation-cap"></i></a> -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
