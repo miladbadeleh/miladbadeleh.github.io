@@ -48,12 +48,99 @@
   <!-- Research Content -->
   <section class="research-detail">
     <div class="container">
-      <h1>Using ResNet101 for Concrete Crack Detection</h1>
-      <p>This project focuses on leveraging the ResNet101 architecture for detecting cracks in concrete structures. The goal is to improve the accuracy and efficiency of structural health monitoring systems by using deep learning techniques.</p>
-      <h2>Methodology</h2>
-      <p>We utilized a pre-trained ResNet101 model and fine-tuned it on a dataset of concrete crack images. The model was trained to classify images as either containing cracks or being crack-free.</p>
-      <h2>Results</h2>
-      <p>The model achieved an accuracy of 95% on the test set, demonstrating the potential of deep learning for automated crack detection in concrete structures.</p>
+
+<h1>DenseNet Model: A Deep Learning Approach for Image Classification</h1>
+
+<div class="section">
+    <h2>Introduction</h2>
+    <p>
+        The DenseNet (Densely Connected Convolutional Network) is a state-of-the-art deep learning architecture designed for image classification tasks. Unlike traditional convolutional neural networks (CNNs), DenseNet connects each layer to every other layer in a feed-forward fashion, enabling feature reuse and improving gradient flow. This architecture is particularly effective for tasks where high accuracy is required, such as medical imaging, object detection, and general image classification.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Key Features of DenseNet</h2>
+    <p>
+        DenseNet introduces several key innovations:
+    </p>
+    <ul>
+        <li><strong>Dense Connectivity:</strong> Each layer in DenseNet receives input from all preceding layers and passes its feature maps to all subsequent layers. This promotes feature reuse and reduces the number of parameters.</li>
+        <li><strong>Feature Concatenation:</strong> Instead of summing feature maps (as in ResNet), DenseNet concatenates them, which helps preserve information and improves model performance.</li>
+        <li><strong>Bottleneck Layers:</strong> To reduce computational complexity, DenseNet uses 1x1 convolutional layers (bottleneck layers) before applying 3x3 convolutions.</li>
+        <li><strong>Transition Layers:</strong> These layers are used to control the growth of feature maps by reducing their dimensionality, ensuring efficient computation.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Model Architecture</h2>
+    <p>
+        The DenseNet model used in this implementation is <strong>DenseNet121</strong>, which consists of 121 layers. The architecture is divided into dense blocks and transition layers:
+    </p>
+    <ul>
+        <li><strong>Dense Blocks:</strong> Each dense block contains multiple layers where each layer is connected to every other layer within the block. This encourages feature reuse and improves gradient flow.</li>
+        <li><strong>Transition Layers:</strong> These layers are placed between dense blocks to reduce the dimensionality of feature maps using 1x1 convolutions and average pooling.</li>
+    </ul>
+    <p>
+        The final layer of the model is a fully connected (FC) layer, which is modified to match the number of classes in the dataset.
+    </p>
+</div>
+
+<div class="section">
+    <h2>Training Process</h2>
+    <p>
+        The model is trained using the following steps:
+    </p>
+    <ol>
+        <li><strong>Data Preparation:</strong> The dataset is preprocessed using transformations such as resizing, normalization, and conversion to tensors. The dataset is split into training, validation, and test sets.</li>
+        <li><strong>Model Initialization:</strong> The DenseNet121 model is initialized with pre-trained weights from ImageNet. The final fully connected layer is modified to match the number of classes in the dataset.</li>
+        <li><strong>Loss Function:</strong> The CrossEntropyLoss function is used to measure the difference between the predicted and actual labels.</li>
+        <li><strong>Optimizer:</strong> The Adam optimizer is used to update the model's parameters during training.</li>
+        <li><strong>Training Loop:</strong> The model is trained for a specified number of epochs. During each epoch, the model is evaluated on the validation set to monitor performance.</li>
+        <li><strong>Model Saving:</strong> After training, the model's weights are saved for future use.</li>
+        <li><strong>Testing:</strong> The model is evaluated on the test set to measure its generalization performance.</li>
+    </ol>
+</div>
+
+<div class="section">
+    <h2>Advantages of DenseNet</h2>
+    <p>
+        DenseNet offers several advantages over traditional CNNs:
+    </p>
+    <ul>
+        <li><strong>Feature Reuse:</strong> By connecting each layer to every other layer, DenseNet encourages the reuse of features, leading to more efficient learning.</li>
+        <li><strong>Reduced Vanishing Gradient:</strong> The dense connectivity improves gradient flow, making it easier to train very deep networks.</li>
+        <li><strong>Parameter Efficiency:</strong> DenseNet requires fewer parameters compared to other architectures like ResNet, making it more memory-efficient.</li>
+        <li><strong>High Accuracy:</strong> DenseNet achieves state-of-the-art performance on various image classification benchmarks.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Applications</h2>
+    <p>
+        DenseNet is widely used in various applications, including:
+    </p>
+    <ul>
+        <li><strong>Medical Imaging:</strong> DenseNet is used for tasks such as tumor detection, organ segmentation, and disease classification.</li>
+        <li><strong>Object Detection:</strong> The architecture is used in object detection frameworks like Faster R-CNN and YOLO.</li>
+        <li><strong>General Image Classification:</strong> DenseNet is used for tasks such as classifying images into categories like animals, vehicles, and more.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>Conclusion</h2>
+    <p>
+        DenseNet is a powerful deep learning architecture that leverages dense connectivity to improve feature reuse, gradient flow, and parameter efficiency. Its ability to achieve high accuracy with fewer parameters makes it a popular choice for image classification tasks. The implementation provided uses DenseNet121, which is trained on a custom dataset and evaluated for performance. This model can be further fine-tuned or adapted for specific applications, making it a versatile tool in the field of computer vision.
+    </p>
+</div>
+<div class="section">
+  <h2>Code Repository</h2>
+  <p>
+      The complete code for this project is available on <a href="https://github.com/miladbadeleh/Concrete-Crack-Detection-Using-DenseNet121" target="_blank">GitHub</a>. Feel free to explore, fork, and contribute!
+  </p>
+</div>
+
+</body>
+</html>
       <a href="../index.html#research" class="btn btn-primary">Back to Research</a>
     </div>
   </section>
