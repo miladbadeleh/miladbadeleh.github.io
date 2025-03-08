@@ -12,7 +12,7 @@
   <!-- Navigation -->
   <nav>
     <div class="container">
-      <a href="#home" class="logo">Milad Badeleh</a>
+      <a href="../index.html" class="logo">Milad Badeleh</a>
       <button class="menu-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -158,7 +158,154 @@
                         </ul>
                     </p>
                 </div>
-        
+
+    <div class="container">
+        <h2>Results</h2>
+
+        <div class="section">
+            <p>
+                The ResNet18 model was trained for <strong>10 epochs</strong> on a custom dataset, achieving excellent performance in both training and validation phases. Below is a summary of the results:
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Training Performance</h3>
+            <ul>
+                <li><strong>Final Training Loss</strong>: <code>0.0080</code></li>
+                <li><strong>Final Training Accuracy</strong>: <code>99.77%</code></li>
+            </ul>
+            <p>
+                The model consistently achieved high accuracy (<code>>99%</code>) throughout the training process, indicating strong learning capabilities.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Validation Performance</h3>
+            <ul>
+                <li><strong>Final Validation Loss</strong>: <code>0.0067</code></li>
+                <li><strong>Final Validation Accuracy</strong>: <code>99.83%</code></li>
+            </ul>
+            <p>
+                The validation accuracy remained stable and high, demonstrating the model's ability to generalize well to unseen data.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Testing Performance</h3>
+            <ul>
+                <li><strong>Test Loss</strong>: <code>0.0067</code></li>
+                <li><strong>Test Accuracy</strong>: <code>99.79%</code></li>
+            </ul>
+            <p>
+                The model performed exceptionally well on the test set, confirming its robustness and reliability for image classification tasks.
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Key Observations</h3>
+            <ol>
+                <li><strong>High Accuracy</strong>: The model achieved <code>>99% accuracy</code> across all phases (training, validation, and testing), indicating excellent performance.</li>
+                <li><strong>Low Loss</strong>: Both training and validation losses were consistently low, suggesting effective optimization and minimal overfitting.</li>
+                <li><strong>Stability</strong>: The model's performance remained stable across epochs, with no significant fluctuations in accuracy or loss.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h3>Performance Over Epochs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Epoch</th>
+                        <th>Train Loss</th>
+                        <th>Train Acc</th>
+                        <th>Val Loss</th>
+                        <th>Val Acc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>0.0276</td>
+                        <td>99.16%</td>
+                        <td>0.0089</td>
+                        <td>99.71%</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>0.0145</td>
+                        <td>99.62%</td>
+                        <td>0.0085</td>
+                        <td>99.72%</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>0.0117</td>
+                        <td>99.71%</td>
+                        <td>0.0071</td>
+                        <td>99.83%</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>0.0098</td>
+                        <td>99.72%</td>
+                        <td>0.0097</td>
+                        <td>99.75%</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>0.0102</td>
+                        <td>99.68%</td>
+                        <td>0.0088</td>
+                        <td>99.71%</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>0.0079</td>
+                        <td>99.79%</td>
+                        <td>0.0059</td>
+                        <td>99.83%</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>0.0090</td>
+                        <td>99.76%</td>
+                        <td>0.0084</td>
+                        <td>99.79%</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>0.0069</td>
+                        <td>99.84%</td>
+                        <td>0.0090</td>
+                        <td>99.75%</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>0.0061</td>
+                        <td>99.82%</td>
+                        <td>0.0083</td>
+                        <td>99.79%</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>0.0080</td>
+                        <td>99.77%</td>
+                        <td>0.0067</td>
+                        <td>99.83%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Conclusion</h3>
+            <p>
+                The ResNet18 model demonstrated outstanding performance, achieving <code>>99% accuracy</code> on the test set. This makes it highly suitable for real-world image classification tasks. The model's stability, low loss, and high accuracy across all phases highlight its effectiveness and reliability.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
                 <div class="section">
                     <h2>Conclusion</h2>
                     <p>

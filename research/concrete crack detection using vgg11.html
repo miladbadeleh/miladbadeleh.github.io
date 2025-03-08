@@ -12,7 +12,7 @@
   <!-- Navigation -->
   <nav>
     <div class="container">
-      <a href="#home" class="logo">Milad Badeleh</a>
+      <a href="../index.html" class="logo">Milad Badeleh</a>
       <button class="menu-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
@@ -138,6 +138,112 @@
                     <li>Save the trained model for future use.</li>
                 </ol>
             </div>
+            <h2>Results</h2>
+
+<p>The VGG11 model was trained for <strong>10 epochs</strong> on a custom dataset, achieving excellent performance on both the training and validation sets. Below is a summary of the results:</p>
+
+<h3>Training and Validation Performance</h3>
+<ul>
+  <li><strong>Training Accuracy</strong>: The model achieved a training accuracy of <strong>99.18%</strong> by the final epoch, with a training loss of <strong>0.0377</strong>.</li>
+  <li><strong>Validation Accuracy</strong>: The validation accuracy reached <strong>99.45%</strong> by the final epoch, with a validation loss of <strong>0.0151</strong>.</li>
+  <li><strong>Test Accuracy</strong>: After training, the model was evaluated on the test set, achieving an impressive <strong>99.74% accuracy</strong> with a test loss of <strong>0.0103</strong>.</li>
+</ul>
+
+<h3>Detailed Epoch-wise Performance</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Epoch</th>
+      <th>Train Loss</th>
+      <th>Train Accuracy</th>
+      <th>Val Loss</th>
+      <th>Val Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>0.3499</td>
+      <td>93.26%</td>
+      <td>0.0387</td>
+      <td>99.22%</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.0558</td>
+      <td>99.18%</td>
+      <td>0.0332</td>
+      <td>99.29%</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>0.1053</td>
+      <td>98.03%</td>
+      <td>0.0161</td>
+      <td>99.55%</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>0.0200</td>
+      <td>99.48%</td>
+      <td>0.0191</td>
+      <td>99.49%</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0.1474</td>
+      <td>97.76%</td>
+      <td>0.0963</td>
+      <td>97.12%</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>0.0358</td>
+      <td>99.14%</td>
+      <td>0.0196</td>
+      <td>99.29%</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>0.0170</td>
+      <td>99.53%</td>
+      <td>0.0173</td>
+      <td>99.53%</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>0.0281</td>
+      <td>99.44%</td>
+      <td>0.0134</td>
+      <td>99.61%</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>0.0478</td>
+      <td>99.11%</td>
+      <td>0.0181</td>
+      <td>99.47%</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0.0377</td>
+      <td>99.18%</td>
+      <td>0.0151</td>
+      <td>99.45%</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Key Observations</h3>
+<ol>
+  <li><strong>High Accuracy</strong>: The model consistently achieved high accuracy on both the training and validation sets, indicating that it learned the dataset effectively.</li>
+  <li><strong>Low Loss</strong>: The training and validation losses decreased significantly over the epochs, demonstrating that the model minimized errors effectively.</li>
+  <li><strong>Generalization</strong>: The high test accuracy (<strong>99.74%</strong>) indicates that the model generalizes well to unseen data, making it suitable for real-world applications.</li>
+</ol>
+
+
+<h3>Conclusion</h3>
+<p>The VGG11 model demonstrated exceptional performance on the custom dataset, achieving <strong>99.74% accuracy</strong> on the test set. This makes it a reliable choice for image classification tasks. The model's ability to generalize well to unseen data highlights its robustness and effectiveness.</p>
         
             <div class="section">
                 <h2>Conclusion</h2>
