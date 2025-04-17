@@ -568,4 +568,23 @@ body {
       font-size: 1rem;
     }
   }
+  .performance {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.metric {
+    background-color: #e8f4f8;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 200px;
+    margin: 10px;
+}
+.metric-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2980b9;
+}
   

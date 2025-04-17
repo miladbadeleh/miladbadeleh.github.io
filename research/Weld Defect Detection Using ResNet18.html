@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>concrete crack detection using resnet50</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="../MB.png">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="../index.html" class="logo">Milad Badeleh</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about" data-translate="about">About</a></li>
+        <li><a href="#research" data-translate="research">Research</a></li>
+        <!-- <li><a href="#publications" data-translate="publications">Publications</a></li> -->
+        <li><a href="#cv" data-translate="cv">CV</a></li>
+        <li><a href="#contact" data-translate="contact">Contact</a></li>
+      </ul>
+      <!-- Language Selector -->
+      <div class="language-selector-wrapper">
+        <select id="language-selector">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="ru">Русский</option>
+          <option value="zh">中文</option>
+          <option value="sp">español</option>
+          <option value="fr">Français</option>
+          <!-- <option value="ar">العربية</option> -->
+          <option value="po">Português</option>
+          <option value="it">Italiano</option>
+          <option value="nl">ِDutch</option>
+          <option value="hi">हिंदी</option>
+          <option value="ba">বাংলা</option>
+        </select>
+        <i class="fas fa-globe"></i>
+      </div>
+      
+    </div>
+  </nav>
+
+  <!-- Research Content -->
+  <section class="research-detail">
+    <div class="container">
+        
+            <h1>Weld Defects Classification Model with ResNet18</h1>
+            
+            <div class="model-card">
+                <h2>Model Overview</h2>
+                <p>This is a deep learning model based on ResNet18 architecture designed to classify weld defects from images. The model was trained to automatically identify and categorize different types of aesthetic defects in welds, helping with quality control in manufacturing processes.</p>
+                
+                <h3>Key Features</h3>
+                <ul>
+                    <li><strong>Architecture:</strong> ResNet18 (pretrained on ImageNet)</li>
+                    <li><strong>Input Size:</strong> 300×30 pixel images</li>
+                    <li><strong>Output:</strong> Classification into multiple defect categories</li>
+                    <li><strong>Training Data:</strong> Specialized dataset of weld images</li>
+                    <li><strong>Framework:</strong> PyTorch</li>
+                </ul>
+            </div>
+            
+            <div class="model-card">
+                <h2>Technical Details</h2>
+                
+                <h3>Model Architecture</h3>
+                <p>The model uses a ResNet18 backbone with the following modifications:</p>
+                <ul>
+                    <li>Pretrained weights from ImageNet for transfer learning</li>
+                    <li>Final fully connected layer replaced to match the number of weld defect classes</li>
+                    <li>Input normalization using ImageNet mean and standard deviation</li>
+                </ul>
+                
+                <h3>Training Process</h3>
+                <p>The model was trained with:</p>
+                <ul>
+                    <li><strong>Optimizer:</strong> Adam with learning rate 0.001</li>
+                    <li><strong>Loss Function:</strong> Cross Entropy Loss</li>
+                    <li><strong>Batch Size:</strong> 32</li>
+                    <li><strong>Epochs:</strong> 10</li>
+                    <li><strong>Data Augmentation:</strong> Resizing to 300×30 pixels</li>
+                </ul>
+            </div>
+            
+            <div class="model-card">
+                <h2>Performance Metrics</h2>
+                
+                <div class="performance">
+                    <div class="metric">
+                        <div class="metric-value">91.50%</div>
+                        <div>Training Accuracy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">90.55%</div>
+                        <div>Validation Accuracy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">0.1922</div>
+                        <div>Training Loss</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">0.2287</div>
+                        <div>Validation Loss</div>
+                    </div>
+                </div>
+                
+                <h3>Training Progress</h3>
+                <p>The model showed consistent improvement throughout training:</p>
+                <ul>
+                    <li>Started with 86.73% accuracy in the first epoch</li>
+                    <li>Reached 91.50% accuracy by the 10th epoch</li>
+                    <li>Validation accuracy closely followed training accuracy, indicating good generalization</li>
+                </ul>
+            </div>
+            
+            <div class="model-card">
+                <h2>How It Works</h2>
+                
+                <h3>Input Requirements</h3>
+                <p>To use the model:</p>
+                <ul>
+                    <li>Input images should be resized to 300×30 pixels</li>
+                    <li>Images should be normalized using ImageNet statistics:
+                        <ul>
+                            <li>Mean: [0.485, 0.456, 0.406]</li>
+                            <li>Standard Deviation: [0.229, 0.224, 0.225]</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Integration Example</h3>
+                <p>Here's a Python code snippet to load and use the model:</p>
+                <pre><code>import torch
+        import torchvision.transforms as transforms
+        from torchvision.models import resnet18
+        
+        # Load the model
+        model = resnet18(pretrained=False)
+        num_classes = 5  # Replace with your actual number of classes
+        model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
+        model.load_state_dict(torch.load('resnet18_weld_defects_model.pth'))
+        model.eval()
+        
+        # Prepare image
+        transform = transforms.Compose([
+            transforms.Resize((300, 30)),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], 
+                                 std=[0.229, 0.224, 0.225])
+        ])
+        
+        # Make prediction
+        image = transform(your_image).unsqueeze(0)
+        output = model(image)
+        _, predicted = torch.max(output, 1)</code></pre>
+            </div>
+            
+            <div class="model-card">
+                <h2>Potential Applications</h2>
+                <ul>
+                    <li>Automated quality control in welding manufacturing</li>
+                    <li>Real-time defect detection in production lines</li>
+                    <li>Training tool for welding technicians</li>
+                    <li>Documentation and logging of weld quality</li>
+                </ul>
+            </div>
+    
+            <div class="section">
+                <h2>Code Repository</h2>
+                <p>
+                    The complete code for this project is available on <a href="https://github.com/miladbadeleh/Weld-Defect-Detection-Using-ResNet18" target="_blank">GitHub</a>. Feel free to explore, fork, and contribute!
+                </p>
+              </div>
+      <a href="../index.html#research" class="btn btn-primary">Back to Research</a>
+    </div>
+  </section>
+
+ <!-- Footer -->
+ <footer>
+    <div class="container">
+      <p>&copy; 2025 Milad Badeleh. All rights reserved.</p>
+      <div class="social-links">
+        <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+        <!-- <a href="https://www.researchgate.net/profile/Milad-Badeleh"><i class="fab fa-researchgate"></i></a> -->
+        <a href="https://github.com/miladbadeleh"><i class="fab fa-github"></i></a>
+        <!-- <a href="https://orcid.org/your-orcid-id" target="_blank"><i class="fab fa-orcid"></i></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=YOUR_SCOPUS_ID" target="_blank"><i class="fas fa-book"></i></a>
+      <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank"><i class="fas fa-graduation-cap"></i></a> -->
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

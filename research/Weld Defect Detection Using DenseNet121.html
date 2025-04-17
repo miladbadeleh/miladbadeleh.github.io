@@ -48,217 +48,105 @@
   <!-- Research Content -->
   <section class="research-detail">
     <div class="container">
-            <h1>Image Classification Using VGG11</h1>
         
-            <div class="section">
-                <h2>Overview</h2>
-                <p>
-                    This project implements an image classification model using the <strong>VGG11</strong> architecture, a deep convolutional neural network (CNN) developed by the Visual Geometry Group (VGG) at Oxford. The model is pretrained on the ImageNet dataset and fine-tuned on a custom dataset to classify images into predefined categories. The implementation leverages PyTorch, a popular deep learning framework, and is designed to run efficiently on GPUs.
-                </p>
+            <h1>Weld Defects Classification with DenseNet121</h1>
+            
+            <div class="model-card">
+                <h2>Model Overview</h2>
+                <p>This is a deep learning model based on DenseNet121 architecture, fine-tuned for classifying weld aesthetical defects. The model was trained on a specialized dataset of weld images to identify various types of defects with high accuracy.</p>
+                
+                <div class="performance">
+                    <div class="metric">
+                        <div class="metric-name">Training Accuracy</div>
+                        <div class="metric-value">91.01%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Validation Accuracy</div>
+                        <div class="metric-value">90.30%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-name">Test Accuracy</div>
+                        <div class="metric-value">90.48%</div>
+                    </div>
+                </div>
             </div>
-        
-            <div class="section">
-                <h2>Architecture</h2>
-                <h3>VGG11</h3>
-                <p>
-                    VGG11 is a member of the VGG family of models, which are characterized by their simplicity and depth. The architecture consists of 11 weight layers, including 8 convolutional layers and 3 fully connected layers. Key features of VGG11 include:
-                </p>
+            
+            <div class="model-card">
+                <h2>Technical Specifications</h2>
+                <div class="tech-specs">
+                    <ul>
+                        <li><strong>Base Architecture:</strong> DenseNet121 (pretrained on ImageNet)</li>
+                        <li><strong>Input Size:</strong> 300×30 pixels (resized from original images)</li>
+                        <li><strong>Input Channels:</strong> 3 (RGB)</li>
+                        <li><strong>Output Classes:</strong> Number of weld defect categories in your dataset</li>
+                        <li><strong>Final Layer:</strong> Custom linear layer matching the number of defect classes</li>
+                        <li><strong>Loss Function:</strong> Cross Entropy Loss</li>
+                        <li><strong>Optimizer:</strong> Adam with learning rate 0.001</li>
+                        <li><strong>Training Epochs:</strong> 10</li>
+                        <li><strong>Batch Size:</strong> 32</li>
+                        <li><strong>Hardware:</strong> CUDA-enabled GPU (model automatically uses GPU if available)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="model-card">
+                <h2>Training Process</h2>
+                <p>The model was trained for 10 epochs with the following performance progression:</p>
+                
+                <div class="training-graph">
+                    <!-- You would replace this with an actual graph image -->
+                    <p>[Training and Validation Accuracy/Loss Graphs Would Appear Here]</p>
+                </div>
+                
+                <p>Key observations from training:</p>
                 <ul>
-                    <li><strong>Small Convolutional Filters</strong>: All convolutional layers use 3x3 filters, which help capture spatial features efficiently.</li>
-                    <li><strong>Max Pooling</strong>: Applied after certain convolutional layers to reduce spatial dimensions and control overfitting.</li>
-                    <li><strong>Fully Connected Layers</strong>: The final layers are fully connected, with the last layer outputting the number of classes for classification.</li>
+                    <li>Rapid initial improvement in accuracy (87.34% in first epoch)</li>
+                    <li>Steady increase in accuracy with each epoch</li>
+                    <li>Final training accuracy of 91.01% and validation accuracy of 90.30%</li>
+                    <li>No significant overfitting observed (small gap between training and validation accuracy)</li>
                 </ul>
-                <p>
-                    The architecture is designed to learn hierarchical features, starting from low-level edges and textures to high-level object representations.
-                </p>
             </div>
-        
-            <div class="section">
+            
+            <div class="model-card">
                 <h2>Implementation Details</h2>
-                <h3>Data Preprocessing</h3>
-                <p>
-                    The input images are preprocessed to match the requirements of the VGG11 model:
-                </p>
+                <p>The model was implemented using PyTorch with the following key components:</p>
+                
+                <h3>Data Preparation</h3>
                 <ul>
-                    <li><strong>Resizing</strong>: Images are resized to 224x224 pixels.</li>
-                    <li><strong>Normalization</strong>: Pixel values are normalized using the mean and standard deviation of the ImageNet dataset (<code>mean=[0.485, 0.456, 0.406]</code>, <code>std=[0.229, 0.224, 0.225]</code>).</li>
-                    <li><strong>Data Augmentation</strong>: Optional transformations like random cropping, flipping, and rotation can be applied to improve generalization.</li>
+                    <li>Images resized to 300×30 pixels</li>
+                    <li>Normalized using ImageNet mean and standard deviation</li>
+                    <li>Dataset split into training, validation, and test sets</li>
                 </ul>
-        
-                <h3>Model Definition</h3>
-                <p>
-                    The VGG11 model is loaded with pretrained weights from ImageNet. The final fully connected layer is modified to match the number of classes in the custom dataset:
-                </p>
-                <pre><code>
-        model = models.vgg11(pretrained=True)
-        num_classes = len(train_dataset.classes)
-        model.classifier[6] = nn.Linear(model.classifier[6].in_features, num_classes)
-                </code></pre>
-        
-                <h3>Training</h3>
-                <p>
-                    The model is trained using the following steps:
-                </p>
+                
+                <h3>Model Architecture</h3>
+                <p>The DenseNet121 architecture was used with these modifications:</p>
                 <ul>
-                    <li><strong>Loss Function</strong>: Cross-entropy loss is used to measure the difference between predicted and actual labels.</li>
-                    <li><strong>Optimizer</strong>: The Adam optimizer is used to update model weights with a learning rate of 0.001.</li>
-                    <li><strong>Training Loop</strong>: The model is trained for a specified number of epochs, with progress tracked using a progress bar.</li>
+                    <li>Pretrained weights from ImageNet</li>
+                    <li>Final fully connected layer replaced to match the number of weld defect classes</li>
                 </ul>
-        
-                <h3>Validation and Testing</h3>
-                <p>
-                    After each epoch, the model is evaluated on a validation set to monitor performance. Once training is complete, the model is tested on a separate test set to measure its generalization ability.
-                </p>
-            </div>
-        
-            <div class="section">
-                <h2>Results</h2>
-                <p>
-                    The performance of the model is evaluated using:
-                </p>
+                
+                <h3>Training Configuration</h3>
                 <ul>
-                    <li><strong>Training Accuracy</strong>: Accuracy on the training set.</li>
-                    <li><strong>Validation Accuracy</strong>: Accuracy on the validation set.</li>
-                    <li><strong>Test Accuracy</strong>: Accuracy on the test set.</li>
+                    <li>Adam optimizer with learning rate 0.001</li>
+                    <li>CrossEntropyLoss as the loss function</li>
+                    <li>Batch size of 32</li>
+                    <li>Automatic GPU utilization when available</li>
                 </ul>
-                <p>
-                    The model achieves high accuracy on the training and validation sets, demonstrating its ability to learn and generalize from the data.
-                </p>
             </div>
-        
-            <div class="section">
-                <h2>Usage</h2>
-                <p>
-                    To use this model:
-                </p>
-                <ol>
-                    <li>Organize your dataset into <code>train</code>, <code>validation</code>, and <code>test</code> folders.</li>
-                    <li>Run the training script to fine-tune the model on your dataset.</li>
-                    <li>Evaluate the model on the test set to measure its performance.</li>
-                    <li>Save the trained model for future use.</li>
-                </ol>
+            
+            <div class="note">
+                <p>Note: The actual performance may vary slightly when deployed in production depending on the hardware configuration and the similarity of new data to the training dataset.</p>
             </div>
-            <h2>Results</h2>
-
-<p>The VGG11 model was trained for <strong>10 epochs</strong> on a custom dataset, achieving excellent performance on both the training and validation sets. Below is a summary of the results:</p>
-
-<h3>Training and Validation Performance</h3>
-<ul>
-  <li><strong>Training Accuracy</strong>: The model achieved a training accuracy of <strong>99.18%</strong> by the final epoch, with a training loss of <strong>0.0377</strong>.</li>
-  <li><strong>Validation Accuracy</strong>: The validation accuracy reached <strong>99.45%</strong> by the final epoch, with a validation loss of <strong>0.0151</strong>.</li>
-  <li><strong>Test Accuracy</strong>: After training, the model was evaluated on the test set, achieving an impressive <strong>99.74% accuracy</strong> with a test loss of <strong>0.0103</strong>.</li>
-</ul>
-
-<h3>Detailed Epoch-wise Performance</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Epoch</th>
-      <th>Train Loss</th>
-      <th>Train Accuracy</th>
-      <th>Val Loss</th>
-      <th>Val Accuracy</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>0.3499</td>
-      <td>93.26%</td>
-      <td>0.0387</td>
-      <td>99.22%</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>0.0558</td>
-      <td>99.18%</td>
-      <td>0.0332</td>
-      <td>99.29%</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>0.1053</td>
-      <td>98.03%</td>
-      <td>0.0161</td>
-      <td>99.55%</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>0.0200</td>
-      <td>99.48%</td>
-      <td>0.0191</td>
-      <td>99.49%</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>0.1474</td>
-      <td>97.76%</td>
-      <td>0.0963</td>
-      <td>97.12%</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>0.0358</td>
-      <td>99.14%</td>
-      <td>0.0196</td>
-      <td>99.29%</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>0.0170</td>
-      <td>99.53%</td>
-      <td>0.0173</td>
-      <td>99.53%</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>0.0281</td>
-      <td>99.44%</td>
-      <td>0.0134</td>
-      <td>99.61%</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>0.0478</td>
-      <td>99.11%</td>
-      <td>0.0181</td>
-      <td>99.47%</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>0.0377</td>
-      <td>99.18%</td>
-      <td>0.0151</td>
-      <td>99.45%</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Key Observations</h3>
-<ol>
-  <li><strong>High Accuracy</strong>: The model consistently achieved high accuracy on both the training and validation sets, indicating that it learned the dataset effectively.</li>
-  <li><strong>Low Loss</strong>: The training and validation losses decreased significantly over the epochs, demonstrating that the model minimized errors effectively.</li>
-  <li><strong>Generalization</strong>: The high test accuracy (<strong>99.74%</strong>) indicates that the model generalizes well to unseen data, making it suitable for real-world applications.</li>
-</ol>
-
-
-<h3>Conclusion</h3>
-<p>The VGG11 model demonstrated exceptional performance on the custom dataset, achieving <strong>99.74% accuracy</strong> on the test set. This makes it a reliable choice for image classification tasks. The model's ability to generalize well to unseen data highlights its robustness and effectiveness.</p>
-        
-            <div class="section">
-                <h2>Conclusion</h2>
-                <p>
-                    The VGG11 model provides a robust and efficient solution for image classification tasks. Its simple yet effective architecture makes it suitable for a wide range of applications, from medical imaging to object recognition. By fine-tuning the pretrained model on a custom dataset, we can achieve high accuracy with relatively small amounts of data.
-                </p>
-            </div>
+        </body>
+        </html>
             <div class="section">
                 <h2>Code Repository</h2>
                 <p>
-                    The complete code for this project is available on <a href="https://github.com/miladbadeleh/Concrete-Crack-Detection-Using-VGG11" target="_blank">GitHub</a>. Feel free to explore, fork, and contribute!
+                    The complete code for this project is available on <a href="https://github.com/miladbadeleh/Weld-Defect-Detection-Using-ResNet18" target="_blank">GitHub</a>. Feel free to explore, fork, and contribute!
                 </p>
               </div>
         
-        </body>
+        
         </html>
       <a href="../index.html#research" class="btn btn-primary">Back to Research</a>
     </div>
