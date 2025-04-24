@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projects = {
         project1: {
             title: 'Sales Performance Dashboard',
-            image: 'images/sales-dashboard-full.jpg',
+            image: './images/supply-chain-dashboard.svg',
             description: 'This interactive dashboard provides comprehensive sales analytics with key performance indicators, regional performance breakdowns, and trend analysis. The solution helped the sales team identify underperforming regions and optimize their strategies.',
             features: [
                 'Dynamic KPI cards with YTD comparisons',
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         project2: {
             title: 'Financial Analysis Dashboard',
-            image: 'images/finance-dashboard-full.jpg',
+            image: './images/supply-chain-dashboard.svg',
             description: 'A comprehensive financial reporting solution that consolidates data from multiple systems to provide real-time insights into profit/loss, cash flow, and budget variance. The dashboard helped reduce financial reporting time by 70%.',
             features: [
                 'Consolidated P&L statement with variance analysis',
@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         project3: {
             title: 'HR Analytics Dashboard',
-            image: 'images/hr-dashboard-full.jpg',
-            image: 'images/hr-dashboard-full.jpg',
+            image: './images/supply-chain-dashboard.svg',
+            image: './images/supply-chain-dashboard.svg',
             description: 'Workforce analytics solution that tracks key HR metrics including employee turnover, recruitment funnel, training completion, and diversity statistics. The dashboard helped HR identify retention risks and optimize hiring processes.',
             features: [
                 'Employee turnover analysis with predictive indicators',
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         project4: {
             title: 'Supply Chain Dashboard',
-            image: 'images/operations-dashboard-full.jpg',
+            image: './images/supply-chain-dashboard.svg',
             description: 'End-to-end supply chain visibility solution that tracks inventory levels, supplier performance, logistics metrics, and demand forecasting. The dashboard helped reduce inventory carrying costs by 15% and improve on-time deliveries.',
             features: [
                 'Inventory turnover and days on hand analysis',
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         project5: {
             title: 'Customer Analytics Dashboard',
-            image: 'images/customer-dashboard-full.jpg',
+            image: './images/supply-chain-dashboard.svg',
             description: 'Customer segmentation and analytics platform that provides insights into customer lifetime value, churn risk, and purchasing patterns. The dashboard helped marketing improve campaign targeting and increase customer retention.',
             features: [
                 'RFM (Recency, Frequency, Monetary) segmentation',
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         project6: {
             title: 'Risk Management Dashboard',
-            image: 'images/risk-dashboard-full.jpg',
+            image: './images/supply-chain-dashboard.svg',
             description: 'Enterprise risk management solution that tracks risk assessments, mitigation actions, and compliance status across the organization. The dashboard provided executives with a single view of enterprise risks and their mitigation progress.',
             features: [
                 'Risk heat map visualization',
@@ -185,8 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     modalFeatures.appendChild(li);
                 });
                 
-                // Set demo link
-                liveDemoBtn.href = project.demoLink;
+                
                 
                 // Show modal
                 modal.style.display = 'block';
@@ -203,6 +202,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close modal when clicking outside
     window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Close modal when clicking outside
+    liveDemoBtn.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
