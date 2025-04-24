@@ -1540,3 +1540,82 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    /* Hide custom cursor on mobile */
+    .cursor {
+        display: none !important;
+    }
+    
+    /* Restore default pointer cursor for interactive elements */
+    a, button, .btn, [role="button"], input, textarea, select {
+        cursor: pointer !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 600px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .timeline-content {
+        max-width: 100%;
+    }
+    
+    .timeline-item {
+        padding-left: 70px !important;
+    }
+    
+    .timeline-date {
+        width: 100px;
+        left: -35px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .info-icon {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 768px) {
+    a, button, .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+    }
+}
+
+@media (max-width: 768px) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}

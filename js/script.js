@@ -1,4 +1,4 @@
-// main.js
+// script.js - Updated with mobile optimizations
 document.addEventListener('DOMContentLoaded', function() {
     // Preloader
     const preloader = document.querySelector('.preloader');
@@ -14,58 +14,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }, preloaderDuration);
     });
 
-    // Custom Cursor
-    const cursorOuter = document.querySelector('.cursor-outer');
-    const cursorInner = document.querySelector('.cursor-inner');
-    let mouseX = 0, mouseY = 0;
-    let cursorOuterX = 0, cursorOuterY = 0;
-    let cursorInnerX = 0, cursorInnerY = 0;
-    let isLinkHovered = false;
+    // Custom Cursor - only initialize on non-touch devices
+    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+        const cursorOuter = document.querySelector('.cursor-outer');
+        const cursorInner = document.querySelector('.cursor-inner');
+        let mouseX = 0, mouseY = 0;
+        let cursorOuterX = 0, cursorOuterY = 0;
+        let cursorInnerX = 0, cursorInnerY = 0;
+        let isLinkHovered = false;
 
-    // Update cursor position
-    function updateCursor() {
-        cursorOuterX += (mouseX - cursorOuterX) / 8;
-        cursorOuterY += (mouseY - cursorOuterY) / 8;
-        cursorInnerX = mouseX;
-        cursorInnerY = mouseY;
+        // Update cursor position
+        function updateCursor() {
+            cursorOuterX += (mouseX - cursorOuterX) / 8;
+            cursorOuterY += (mouseY - cursorOuterY) / 8;
+            cursorInnerX = mouseX;
+            cursorInnerY = mouseY;
+            
+            cursorOuter.style.transform = `translate3d(${cursorOuterX}px, ${cursorOuterY}px, 0)`;
+            cursorInner.style.transform = `translate3d(${cursorInnerX}px, ${cursorInnerY}px, 0)`;
+            
+            requestAnimationFrame(updateCursor);
+        }
+
+        // Track mouse movement
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Initialize cursor
+        updateCursor();
+
+        // Handle link hover states
+        const hoverableElements = document.querySelectorAll('a, button, .btn, .nav-link, .research-link, .publication-link, .teaching-link');
         
-        cursorOuter.style.transform = `translate3d(${cursorOuterX}px, ${cursorOuterY}px, 0)`;
-        cursorInner.style.transform = `translate3d(${cursorInnerX}px, ${cursorInnerY}px, 0)`;
-        
-        requestAnimationFrame(updateCursor);
+        hoverableElements.forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                isLinkHovered = true;
+                cursorInner.style.width = '20px';
+                cursorInner.style.height = '20px';
+                cursorInner.style.backgroundColor = 'transparent';
+                cursorInner.style.border = '2px solid var(--secondary-color)';
+                cursorOuter.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(1.5)`;
+            });
+            
+            el.addEventListener('mouseleave', function() {
+                isLinkHovered = false;
+                cursorInner.style.width = '8px';
+                cursorInner.style.height = '8px';
+                cursorInner.style.backgroundColor = 'var(--secondary-color)';
+                cursorInner.style.border = 'none';
+                cursorOuter.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(1)`;
+            });
+        });
+    } else {
+        // Remove cursor elements if they exist on mobile
+        document.querySelectorAll('.cursor').forEach(el => el.remove());
     }
-
-    // Track mouse movement
-    document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    // Initialize cursor
-    updateCursor();
-
-    // Handle link hover states
-    const hoverableElements = document.querySelectorAll('a, button, .btn, .nav-link, .research-link, .publication-link, .teaching-link');
-    
-    hoverableElements.forEach(el => {
-        el.addEventListener('mouseenter', function() {
-            isLinkHovered = true;
-            cursorInner.style.width = '20px';
-            cursorInner.style.height = '20px';
-            cursorInner.style.backgroundColor = 'transparent';
-            cursorInner.style.border = '2px solid var(--secondary-color)';
-            cursorOuter.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(1.5)`;
-        });
-        
-        el.addEventListener('mouseleave', function() {
-            isLinkHovered = false;
-            cursorInner.style.width = '8px';
-            cursorInner.style.height = '8px';
-            cursorInner.style.backgroundColor = 'var(--secondary-color)';
-            cursorInner.style.border = 'none';
-            cursorOuter.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(1)`;
-        });
-    });
 
     // Navigation
     const navbar = document.querySelector('.navbar');
@@ -130,56 +135,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-// Select the button
-const backToTop = document.querySelector('.back-to-top');
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
 
-// Scroll event listener
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-        backToTop.classList.add('active');
-    } else {
-        backToTop.classList.remove('active');
-    }
-});
-
-// Click event for smooth scrolling
-backToTop.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    // Scroll event listener
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
     });
-});
 
-    // Enhanced JS
-window.addEventListener('scroll', function() {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const clientHeight = document.documentElement.clientHeight;
-    const scrollable = scrollHeight - clientHeight;
-    const scrolled = window.scrollY;
-    
-    // Show/hide logic
-    if (scrolled > 300) {
-        backToTop.classList.add('active');
+    // Click event for smooth scrolling
+    backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Enhanced scroll progress
+    window.addEventListener('scroll', function() {
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollable = scrollHeight - clientHeight;
+        const scrolled = window.scrollY;
         
-        // Progress animation (optional)
-        const progress = (scrolled / scrollable) * 100;
-        backToTop.style.setProperty('--progress', `${progress}%`);
-        
-    } else {
-        backToTop.classList.remove('active');
-    }
-});
-
-
-
-
-
-
-
-
-
-
+        if (scrolled > 300) {
+            backToTop.classList.add('active');
+            
+            // Progress animation (optional)
+            const progress = (scrolled / scrollable) * 100;
+            backToTop.style.setProperty('--progress', `${progress}%`);
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
 
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
@@ -276,8 +269,17 @@ window.addEventListener('scroll', function() {
         });
     });
 
-    // Initialize animations
-    initAnimations();
+    // Initialize animations only if not on mobile
+    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+        initAnimations();
+    } else {
+        // On mobile, make all elements visible immediately
+        document.querySelectorAll('[data-aos], .research-item, .publication-item, .teaching-item, .info-item, .timeline-item')
+            .forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+    }
     
     // Initialize particles.js if available
     if (typeof particlesJS !== 'undefined') {
@@ -286,8 +288,8 @@ window.addEventListener('scroll', function() {
         });
     }
 
-    // Initialize AOS (Animate On Scroll)
-    if (typeof AOS !== 'undefined') {
+    // Initialize AOS (Animate On Scroll) if not mobile
+    if (typeof AOS !== 'undefined' && !('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -296,201 +298,3 @@ window.addEventListener('scroll', function() {
         });
     }
 });
-
-// animations.js
-function initAnimations() {
-    // Animate hero elements
-    const heroTitle = document.querySelector('.hero-title');
-    const heroSubtitle = document.querySelector('.hero-subtitle-wrapper');
-    const heroText = document.querySelector('.hero-text');
-    const heroButtons = document.querySelector('.hero-buttons');
-    
-    setTimeout(() => {
-        if (heroTitle) {
-            heroTitle.style.opacity = '1';
-            heroTitle.style.transform = 'translateY(0)';
-        }
-    }, 300);
-    
-    setTimeout(() => {
-        if (heroSubtitle) {
-            heroSubtitle.style.opacity = '1';
-            heroSubtitle.style.transform = 'translateY(0)';
-        }
-    }, 600);
-    
-    setTimeout(() => {
-        if (heroText) {
-            heroText.style.opacity = '1';
-            heroText.style.transform = 'translateY(0)';
-        }
-    }, 900);
-    
-    setTimeout(() => {
-        if (heroButtons) {
-            heroButtons.style.opacity = '1';
-            heroButtons.style.transform = 'translateY(0)';
-        }
-    }, 1200);
-
-    // Animate elements when they come into view
-    const animateElements = document.querySelectorAll('[data-aos], .research-item, .publication-item, .timeline-item, .teaching-item, .info-item, .contact-form');
-    
-    const animateOnScroll = function() {
-        animateElements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            const offset = 100;
-            
-            if (elementPosition < windowHeight - offset) {
-                element.style.opacity = '1';
-                element.style.transform = 'translate(0)';
-                
-                // Special case for timeline items
-                if (element.classList.contains('timeline-item')) {
-                    if (element.classList.contains('aos-animate')) return;
-                    
-                    const delay = element.getAttribute('data-aos-delay') || 0;
-                    setTimeout(() => {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateX(0)';
-                        element.classList.add('aos-animate');
-                    }, delay);
-                }
-            }
-        });
-    };
-    
-    // Initial check
-    animateOnScroll();
-    
-    // Check on scroll
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Animate contact info items with staggered delay
-    const infoItems = document.querySelectorAll('.info-item');
-    infoItems.forEach((item, index) => {
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateX(0)';
-        }, index * 150);
-    });
-    
-    // Animate contact form
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        setTimeout(() => {
-            contactForm.style.opacity = '1';
-            contactForm.style.transform = 'translateX(0)';
-        }, 600);
-    }
-}
-
-// particles.json - Particle.js configuration
-const particlesConfig = {
-    "particles": {
-        "number": {
-            "value": 80,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-        },
-        "color": {
-            "value": "#4b8ab9"
-        },
-        "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            },
-            "polygon": {
-                "nb_sides": 5
-            }
-        },
-        "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-            }
-        },
-        "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-            }
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#4b8ab9",
-            "opacity": 0.4,
-            "width": 1
-        },
-        "move": {
-            "enable": true,
-            "speed": 2,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-                "enable": false,
-                "rotateX": 600,
-                "rotateY": 1200
-            }
-        }
-    },
-    "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-                "enable": true,
-                "mode": "grab"
-            },
-            "onclick": {
-                "enable": true,
-                "mode": "push"
-            },
-            "resize": true
-        },
-        "modes": {
-            "grab": {
-                "distance": 140,
-                "line_linked": {
-                    "opacity": 1
-                }
-            },
-            "bubble": {
-                "distance": 400,
-                "size": 40,
-                "duration": 2,
-                "opacity": 8,
-                "speed": 3
-            },
-            "repulse": {
-                "distance": 200,
-                "duration": 0.4
-            },
-            "push": {
-                "particles_nb": 4
-            },
-            "remove": {
-                "particles_nb": 2
-            }
-        }
-    },
-    "retina_detect": true
-};
-
-// Save particlesConfig to a file named particles.json in your assets folder
