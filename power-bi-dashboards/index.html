@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milad Badeleh | Power BI Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/MB.png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Milad Badeleh</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Milad Badeleh Power BI Dashboard Portfolio</h1>
+            <p class="subtitle">Transforming data into actionable insights with beautiful visualizations</p>
+            <a href="#portfolio" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>My Power BI Projects</h2>
+            <p class="section-description">Explore my collection of interactive dashboards and data stories</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="sales">Sales</button>
+                <button class="filter-btn" data-filter="finance">Finance</button>
+                <button class="filter-btn" data-filter="hr">HR</button>
+                <button class="filter-btn" data-filter="operations">Operations</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-category="sales">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/sales-dashboard-thumb.jpg" alt="Sales Performance Dashboard">
+                            <div class="overlay">
+                                <a href="#" class="view-btn" data-project="project1">View Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Sales Performance Dashboard</h3>
+                            <p>Interactive dashboard tracking KPIs, regional performance, and sales trends.</p>
+                            <div class="tags">
+                                <span>Power BI</span>
+                                <span>DAX</span>
+                                <span>Sales Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-category="finance">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/finance-dashboard-thumb.jpg" alt="Financial Analysis Dashboard">
+                            <div class="overlay">
+                                <a href="#" class="view-btn" data-project="project2">View Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Financial Analysis Dashboard</h3>
+                            <p>Comprehensive financial reporting with profit/loss, cash flow, and budget variance.</p>
+                            <div class="tags">
+                                <span>Power BI</span>
+                                <span>Financial Modeling</span>
+                                <span>Budgeting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-category="hr">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/hr-dashboard-thumb.jpg" alt="HR Analytics Dashboard">
+                            <div class="overlay">
+                                <a href="#" class="view-btn" data-project="project3">View Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>HR Analytics Dashboard</h3>
+                            <p>Employee metrics, turnover analysis, and workforce planning visualization.</p>
+                            <div class="tags">
+                                <span>Power BI</span>
+                                <span>People Analytics</span>
+                                <span>Recruitment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-category="operations">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/operations-dashboard-thumb.jpg" alt="Supply Chain Dashboard">
+                            <div class="overlay">
+                                <a href="#" class="view-btn" data-project="project4">View Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Supply Chain Dashboard</h3>
+                            <p>End-to-end supply chain visibility with inventory, logistics, and vendor performance.</p>
+                            <div class="tags">
+                                <span>Power BI</span>
+                                <span>Supply Chain</span>
+                                <span>Inventory</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-category="sales">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/customer-dashboard-thumb.jpg" alt="Customer Analytics Dashboard">
+                            <div class="overlay">
+                                <a href="#" class="view-btn" data-project="project5">View Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Customer Analytics Dashboard</h3>
+                            <p>Customer segmentation, lifetime value, and churn prediction analysis.</p>
+                            <div class="tags">
+                                <span>Power BI</span>
+                                <span>Customer Analytics</span>
+                                <span>Segmentation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-category="finance">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="images/risk-dashboard-thumb.jpg" alt="Risk Management Dashboard">
+                            <div class="overlay">
+                                <a href="#" class="view-btn" data-project="project6">View Dashboard</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h3>Risk Management Dashboard</h3>
+                            <p>Risk assessment, mitigation tracking, and compliance monitoring visualization.</p>
+                            <div class="tags">
+                                <span>Power BI</span>
+                                <span>Risk Analysis</span>
+                                <span>Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm a Power BI developer and data analyst passionate about transforming raw data into meaningful insights. With expertise in DAX, data modeling, and visualization best practices, I create interactive dashboards that drive business decisions.</p>
+                    <p>My approach combines technical skills with an eye for design to deliver reports that are both functional and visually appealing.</p>
+                    <div class="skills">
+                        <h3>Skills & Technologies</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Power BI Desktop & Service</li>
+                            <li><i class="fas fa-check"></i> DAX & Power Query</li>
+                            <li><i class="fas fa-check"></i> SQL & Data Modeling</li>
+                            <li><i class="fas fa-check"></i> Data Storytelling</li>
+                            <li><i class="fas fa-check"></i> UI/UX for Dashboards</li>
+                            <li><i class="fas fa-check"></i> Power Automate</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-description">Have a project in mind or want to discuss Power BI solutions? Reach out!</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>your.email@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (123) 456-7890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Tehran, Iran</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/miladbadeleh"><i class="fab fa-github"></i></a>
+                        <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Milad Badeleh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2 id="modalTitle">Project Title</h2>
+                <div class="modal-image">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="modal-details">
+                    <h3>Project Details</h3>
+                    <p id="modalDescription">Project description goes here.</p>
+                    <div class="modal-features">
+                        <h4>Key Features:</h4>
+                        <ul id="modalFeatures">
+                            <!-- Features will be added by JavaScript -->
+                        </ul>
+                    </div>
+                    <a href="#" class="btn" id="liveDemoBtn" target="_blank">View Live Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
