@@ -474,13 +474,14 @@ img {
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 100vh; /* Changed from 700px to 100vh for better mobile support */
+    min-height: -webkit-fill-available; /* Fix for mobile browsers */
     background: url('../assets/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     color: var(--white);
     text-align: center;
     overflow: hidden;
+    z-index: 1; /* Ensure it stays above other elements */
 }
 .hero-particles {
     position: absolute;
