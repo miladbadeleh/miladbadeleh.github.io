@@ -1529,27 +1529,47 @@ textarea.form-control {
         cursor: pointer !important;
     }
     
-    .hero {
+  .hero {
         min-height: 100vh;
         height: auto;
-        padding: 100px 0;
+        padding: 80px 0 40px;
     }
     
     .hero-content {
-        padding-top: 60px; /* Add some top padding to account for navbar */
+        padding-top: 60px;
+        position: relative;
+        z-index: 3;
     }
     
     .hero-title {
-        font-size: 2.5rem !important;
-        margin-bottom: 20px;
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
     }
     
     .hero-subtitle {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+        letter-spacing: 1px !important;
     }
     
     .hero-text {
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Ensure overlay covers properly */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: rgba(0, 0, 0, 0.7); Darker overlay for better contrast */
+        z-index: 2;
+    }
+    
+    /* Adjust particles container */
+    .hero-particles {
+        height: 100%;
     }
         .contact-form {
         width: 100%;
