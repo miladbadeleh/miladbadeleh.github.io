@@ -474,7 +474,7 @@ img {
 .hero {
     position: relative;
     height: 100vh;
-    min-height: 700px;
+    min-height: 100vh; /* Changed from 700px to 100vh for better mobile support */
     background: url('../assets/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -482,7 +482,6 @@ img {
     text-align: center;
     overflow: hidden;
 }
-
 .hero-particles {
     position: absolute;
     top: 0;
@@ -1551,6 +1550,28 @@ textarea.form-control {
     a, button, .btn, [role="button"], input, textarea, select {
         cursor: pointer !important;
     }
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        padding: 100px 0;
+    }
+    
+    .hero-content {
+        padding-top: 60px; /* Add some top padding to account for navbar */
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-text {
+        font-size: 1rem !important;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1601,9 +1622,6 @@ textarea.form-control {
     .info-icon {
         margin-bottom: var(--spacing-sm);
     }
-}
-
-@media (max-width: 768px) {
     a, button, .btn {
         min-height: 44px;
         min-width: 44px;
@@ -1612,9 +1630,6 @@ textarea.form-control {
     .nav-link {
         padding: var(--spacing-sm) 0;
     }
-}
-
-@media (max-width: 768px) {
     input, select, textarea {
         font-size: 16px !important;
     }
