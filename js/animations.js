@@ -1,4 +1,3 @@
-
 // animations.js
 function initAnimations() {
     // Animate hero elements
@@ -7,6 +6,28 @@ function initAnimations() {
     const heroText = document.querySelector('.hero-text');
     const heroButtons = document.querySelector('.hero-buttons');
     
+    // Immediately show elements on mobile
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        if (heroTitle) {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }
+        if (heroSubtitle) {
+            heroSubtitle.style.opacity = '1';
+            heroSubtitle.style.transform = 'translateY(0)';
+        }
+        if (heroText) {
+            heroText.style.opacity = '1';
+            heroText.style.transform = 'translateY(0)';
+        }
+        if (heroButtons) {
+            heroButtons.style.opacity = '1';
+            heroButtons.style.transform = 'translateY(0)';
+        }
+        return; // Skip the rest for mobile
+    }
+    
+    // Desktop animations
     setTimeout(() => {
         if (heroTitle) {
             heroTitle.style.opacity = '1';
@@ -34,6 +55,9 @@ function initAnimations() {
             heroButtons.style.transform = 'translateY(0)';
         }
     }, 1200);
+
+    // ... rest of your animation code ...
+}
 
     // Animate elements when they come into view
     const animateElements = document.querySelectorAll('[data-aos], .research-item, .publication-item, .timeline-item, .teaching-item, .info-item, .contact-form');
@@ -86,4 +110,3 @@ function initAnimations() {
             contactForm.style.transform = 'translateX(0)';
         }, 600);
     }
-}

@@ -125,3 +125,14 @@
 .contact-form {
     transform: translateX(20px);
 }
+
+/* Add this to animations.css */
+@media (max-width: 768px) {
+    .hero-title,
+    .hero-subtitle-wrapper,
+    .hero-text,
+    .hero-buttons {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}

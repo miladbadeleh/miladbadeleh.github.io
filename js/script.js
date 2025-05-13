@@ -269,17 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize animations only if not on mobile
-    if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
-        initAnimations();
-    } else {
-        // On mobile, make all elements visible immediately
-        document.querySelectorAll('[data-aos], .research-item, .publication-item, .teaching-item, .info-item, .timeline-item')
-            .forEach(el => {
-                el.style.opacity = '1';
-                el.style.transform = 'none';
-            });
-    }
+    initAnimations();
     
     // Initialize particles.js if available
     if (typeof particlesJS !== 'undefined') {
