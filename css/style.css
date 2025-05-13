@@ -1592,6 +1592,30 @@ textarea.form-control {
     .hero-text {
         font-size: 1rem;
     }
+        .hero {
+        padding: 60px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero-subtitle-wrapper {
+        flex-direction: column;
+    }
+    
+    .hero-subtitle-line {
+        display: none;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hero-scroll-down {
+        bottom: 15px;
+    }
 }
 
 @media (max-width: 992px) {
