@@ -1421,6 +1421,18 @@ textarea.form-control {
     .hero-title {
         font-size: 3.5rem;
     }
+        .timeline-content {
+        max-width: 100%;
+    }
+    
+    .timeline-item {
+        padding-left: 70px !important;
+    }
+    
+    .timeline-date {
+        width: 100px;
+        left: -35px !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1507,7 +1519,69 @@ textarea.form-control {
     .publication-links {
         flex-wrap: wrap;
     }
+      /* Hide custom cursor on mobile */
+    .cursor {
+        display: none !important;
+    }
+    
+    /* Restore default pointer cursor for interactive elements */
+    a, button, .btn, [role="button"], input, textarea, select {
+        cursor: pointer !important;
+    }
+    
+    .hero {
+        min-height: 100vh;
+        height: auto;
+        padding: 100px 0;
+    }
+    
+    .hero-content {
+        padding-top: 60px; /* Add some top padding to account for navbar */
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .hero-text {
+        font-size: 1rem !important;
+    }
+        .contact-form {
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .info-icon {
+        margin-bottom: var(--spacing-sm);
+    }
+    a, button, .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) 0;
+    }
+    input, select, textarea {
+        font-size: 16px !important;
+    }
 }
+
+
+
+
+
+
 
 @media (max-width: 576px) {
     .hero-title {
@@ -1539,45 +1613,9 @@ textarea.form-control {
     .footer-content {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 768px) {
-    /* Hide custom cursor on mobile */
-    .cursor {
-        display: none !important;
-    }
-    
-    /* Restore default pointer cursor for interactive elements */
-    a, button, .btn, [role="button"], input, textarea, select {
-        cursor: pointer !important;
-    }
-    .hero {
-        min-height: 100vh;
-        height: auto;
-        padding: 100px 0;
-    }
-    
-    .hero-content {
-        padding-top: 60px; /* Add some top padding to account for navbar */
-    }
-    
-    .hero-title {
-        font-size: 2.5rem !important;
-        margin-bottom: 20px;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem !important;
-    }
-    
-    .hero-text {
-        font-size: 1rem !important;
-    }
-}
-
-@media (max-width: 576px) {
     .hero {
         min-height: 600px;
+        padding: 60px 0 30px;
     }
     
     .hero-title {
@@ -1592,14 +1630,7 @@ textarea.form-control {
     .hero-text {
         font-size: 1rem;
     }
-        .hero {
-        padding: 60px 0 30px;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem !important;
-    }
-    
+     
     .hero-subtitle-wrapper {
         flex-direction: column;
     }
@@ -1615,47 +1646,5 @@ textarea.form-control {
     
     .hero-scroll-down {
         bottom: 15px;
-    }
-}
-
-@media (max-width: 992px) {
-    .timeline-content {
-        max-width: 100%;
-    }
-    
-    .timeline-item {
-        padding-left: 70px !important;
-    }
-    
-    .timeline-date {
-        width: 100px;
-        left: -35px !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-form {
-        width: 100%;
-        padding: var(--spacing-md);
-    }
-    
-    .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .info-icon {
-        margin-bottom: var(--spacing-sm);
-    }
-    a, button, .btn {
-        min-height: 44px;
-        min-width: 44px;
-    }
-    
-    .nav-link {
-        padding: var(--spacing-sm) 0;
-    }
-    input, select, textarea {
-        font-size: 16px !important;
     }
 }
